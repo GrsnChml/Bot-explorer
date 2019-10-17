@@ -1,15 +1,13 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial BTserial(0, 1); // RX | TX
+SoftwareSerial BTserial(0, 1); // module RX -> TX arduino ***** and module TX -> RX arduino
 
 int sensorPin = A0;
-
 int sensorValue = 0;
-
-void setup() {
-
-BTserial.begin(9600); 
-Serial.begin(9600);
+void setup()  
+{
+  BTserial.begin(9600); 
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -37,5 +35,4 @@ void loop() {
   Serial.print(sensorValue);  
   Serial.print(";");
   delay(20);
-
 }
