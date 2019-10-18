@@ -8,11 +8,10 @@ x = conn.cursor()
 
 longitud = 12.41414
 latitud = -23.662434
-fecha = 20199181021412
 velocidad  = 20.32
 
 try:
-   x.execute("""INSERT INTO trama VALUES (null,'%s','%s','%s','%s')""",(latitud,longitud,velocidad,fecha));
+   x.execute("""INSERT INTO trama VALUES (null,'%s','%s','%s',Now())""",(latitud,longitud,velocidad));
    print("success");
    conn.commit();
 except:
