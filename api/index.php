@@ -1,7 +1,17 @@
 <?php
+    require_once 'connection.php';
+    
 	$datos = $_GET['data'];
-	$fh = fopen("prueba.txt", 'a+') or die("Se produjo un error al crear el archivo");  
-	fwrite($fh, $datos."\n") or die("No se pudo escribir en el archivo");
-	fclose($fh);
-	echo "Se ha escrito sin problemas";
+
+	$info = explode(';', $datos);
+
+    $sql = "INSERT INTO 
+    sensor () 
+    VALUES (null,'$info[0]','$info[1]','$info[2]');";
+
+    if (mysqli_query($mysqli, $sql)) {
+        echo "New record created successfully";
+    } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
+    }
 ?>

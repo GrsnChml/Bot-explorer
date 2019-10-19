@@ -4,6 +4,7 @@ SoftwareSerial BTserial(0, 1); // module RX -> TX arduino ***** and module TX ->
 
 int sensorPin = A0;
 int sensorValue = 0;
+long randNumber;  
 void setup()  
 {
   BTserial.begin(9600); 
@@ -23,16 +24,12 @@ void loop() {
   }
 
   sensorValue = analogRead(sensorPin);
-
-  Serial.print("1234");
-  Serial.print(",");
-  Serial.print("1234.0");
-  Serial.print(",");
-  Serial.print("1234 hPa");
-  Serial.print(",");
-  Serial.print("500 ml/s");
-  Serial.print(",");
-  Serial.print(sensorValue);  
+  randNumber = random(300);
+  Serial.print(randNumber);
   Serial.print(";");
+  randNumber = random(300,800);
+  Serial.print(randNumber);
+  Serial.print(";");
+  Serial.print(sensorValue);
   delay(2000);
 }
