@@ -18,6 +18,8 @@
     <th>Temperatura</th>
     <th>Distancia</th>
     <th>Oxigeno</th>
+    <th>Humedad</th>
+    <th>Lluvia</th>
   </tr>
 <?php
     require_once 'connection.php';
@@ -26,8 +28,7 @@
     if ($result->num_rows > 0) {
         
         while($row = $result->fetch_assoc()) {
-            echo "<tr><td>".$row["temp"]."</td><td>".$row["dist"].
-            "</td><td>". $row["ox"];
+            echo "<tr><td>".$row["temperatura"]."</td><td>".$row["distancia"]."</td><td>". $row["oxigeno"]."</td> <td>". $row["humedad"]."</td> <td>". $row["lluvia"]."</td>";
         }
         
     } else {
